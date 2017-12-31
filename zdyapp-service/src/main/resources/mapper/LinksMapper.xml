@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+    <!DOCTYPE mapper   
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zdy.biz.links.dao.ILinksDao">
+
+	<resultMap id="BaseResultMap" type="com.zdy.dubbo.model.links.Links">
+		<id column="id" property="id" />
+		<result property="linkName" column="link_name" />
+		<result property="linkAddr" column="link_addr" />
+		<result property="display" column="display" />
+		<result property="linkType" column="link_type" />
+		<result property="linkComment" column="link_comment" />
+		<result property="createUser" column="create_user" />
+		<result property="createTime" column="create_time" />
+		<result property="operTime" column="oper_time" />
+		<result property="operUser" column="oper_user" />
+		<result property="rsrvStr1" column="RSRV_STR1" />
+		<result property="rsrvStr2" column="RSRV_STR2" />
+		<result property="rsrvStr4" column="RSRV_STR4" />
+		<result property="rsrvStr3" column="RSRV_STR3" />
+		<result property="rsrvStr5" column="RSRV_STR5" />
+		<result property="rsrvStr6" column="RSRV_STR6" />
+		<result property="rsrvStr7" column="RSRV_STR7" />
+		<result property="rsrvStr8" column="RSRV_STR8" />
+		<result property="rsrvStr9" column="RSRV_STR9" />
+		<result property="rsrvStr0" column="RSRV_STR0" />
+		<result property="attachId" column="ATTACH_ID" />
+	</resultMap>
+
+	<sql id="BaseColumnList">
+	    <![CDATA[
+			links.id id ,
+			links.link_name linkName ,
+			links.link_addr linkAddr ,
+			links.display display ,
+			links.link_type linkType ,
+			links.link_comment linkComment ,
+			links.create_user createUser ,
+			links.create_time createTime ,
+			links.oper_time operTime ,
+			links.oper_user operUser ,
+			links.RSRV_STR1 rsrvStr1 ,
+			links.RSRV_STR2 rsrvStr2 ,
+			links.RSRV_STR4 rsrvStr4 ,
+			links.RSRV_STR3 rsrvStr3 ,
+			links.RSRV_STR5 rsrvStr5 ,
+			links.RSRV_STR6 rsrvStr6 ,
+			links.RSRV_STR7 rsrvStr7 ,
+			links.RSRV_STR8 rsrvStr8 ,
+			links.RSRV_STR9 rsrvStr9 ,
+			links.RSRV_STR0 rsrvStr0 ,
+			links.ATTACH_ID attachId 
+	    ]]>
+	</sql>
+
+	<sql id="listWhere">
+		<if test="id != null ">
+			and id = #{id}
+		</if>
+		<if test="linkName != null and linkName != ''">
+			and link_name = #{linkName}
+		</if>
+		<if test="linkAddr != null and linkAddr != ''">
+			and link_addr = #{linkAddr}
+		</if>
+		<if test="display != null ">
+			and display = #{display}
+		</if>
+		<if test="linkType != null ">
+			and link_type = #{linkType}
+		</if>
+		<if test="linkComment != null and linkComment != ''">
+			and link_comment = #{linkComment}
+		</if>
+		<if test="createUser != null ">
+			and create_user = #{createUser}
+		</if>
+		<if test="createTime != null ">
+			and create_time = #{createTime}
+		</if>
+		<if test="operTime != null ">
+			and oper_time = #{operTime}
+		</if>
+		<if test="operUser != null ">
+			and oper_user = #{operUser}
+		</if>
+		<if test="rsrvStr1 != null and rsrvStr1 != ''">
+			and RSRV_STR1 = #{rsrvStr1}
+		</if>
+		<if test="rsrvStr2 != null and rsrvStr2 != ''">
+			and RSRV_STR2 = #{rsrvStr2}
+		</if>
+		<if test="rsrvStr4 != null and rsrvStr4 != ''">
+			and RSRV_STR4 = #{rsrvStr4}
+		</if>
+		<if test="rsrvStr3 != null and rsrvStr3 != ''">
+			and RSRV_STR3 = #{rsrvStr3}
+		</if>
+		<if test="rsrvStr5 != null and rsrvStr5 != ''">
+			and RSRV_STR5 = #{rsrvStr5}
+		</if>
+		<if test="rsrvStr6 != null and rsrvStr6 != ''">
+			and RSRV_STR6 = #{rsrvStr6}
+		</if>
+		<if test="rsrvStr7 != null and rsrvStr7 != ''">
+			and RSRV_STR7 = #{rsrvStr7}
+		</if>
+		<if test="rsrvStr8 != null and rsrvStr8 != ''">
+			and RSRV_STR8 = #{rsrvStr8}
+		</if>
+		<if test="rsrvStr9 != null and rsrvStr9 != ''">
+			and RSRV_STR9 = #{rsrvStr9}
+		</if>
+		<if test="rsrvStr0 != null and rsrvStr0 != ''">
+			and RSRV_STR0 = #{rsrvStr0}
+		</if>
+		<if test="attachId != null and attachId != ''">
+			and ATTACH_ID = #{attachId}
+		</if>
+	</sql>
+
+	<insert id="save" useGeneratedKeys="true" keyProperty="id">
+		insert into
+		links
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="linkName != null">
+				link_name ,
+			</if>
+			<if test="linkAddr != null">
+				link_addr ,
+			</if>
+			<if test="display != null">
+				display ,
+			</if>
+			<if test="linkType != null">
+				link_type ,
+			</if>
+			<if test="linkComment != null">
+				link_comment ,
+			</if>
+			<if test="createUser != null">
+				create_user ,
+			</if>
+			create_time ,
+			oper_time ,
+			<if test="operUser != null">
+				oper_user ,
+			</if>
+			<if test="rsrvStr1 != null">
+				RSRV_STR1 ,
+			</if>
+			<if test="rsrvStr2 != null">
+				RSRV_STR2 ,
+			</if>
+			<if test="rsrvStr4 != null">
+				RSRV_STR4 ,
+			</if>
+			<if test="rsrvStr3 != null">
+				RSRV_STR3 ,
+			</if>
+			<if test="rsrvStr5 != null">
+				RSRV_STR5 ,
+			</if>
+			<if test="rsrvStr6 != null">
+				RSRV_STR6 ,
+			</if>
+			<if test="rsrvStr7 != null">
+				RSRV_STR7 ,
+			</if>
+			<if test="rsrvStr8 != null">
+				RSRV_STR8 ,
+			</if>
+			<if test="rsrvStr9 != null">
+				RSRV_STR9 ,
+			</if>
+			<if test="rsrvStr0 != null">
+				RSRV_STR0 ,
+			</if>
+			<if test="attachId != null">
+				ATTACH_ID ,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="linkName != null">
+				#{linkName} ,
+			</if>
+			<if test="linkAddr != null">
+				#{linkAddr} ,
+			</if>
+			<if test="display != null">
+				#{display} ,
+			</if>
+			<if test="linkType != null">
+				#{linkType} ,
+			</if>
+			<if test="linkComment != null">
+				#{linkComment} ,
+			</if>
+			<if test="createUser != null">
+				#{createUser} ,
+			</if>
+			now(),
+			now() ,
+			<if test="operUser != null">
+				#{operUser} ,
+			</if>
+			<if test="rsrvStr1 != null">
+				#{rsrvStr1} ,
+			</if>
+			<if test="rsrvStr2 != null">
+				#{rsrvStr2} ,
+			</if>
+			<if test="rsrvStr4 != null">
+				#{rsrvStr4} ,
+			</if>
+			<if test="rsrvStr3 != null">
+				#{rsrvStr3} ,
+			</if>
+			<if test="rsrvStr5 != null">
+				#{rsrvStr5} ,
+			</if>
+			<if test="rsrvStr6 != null">
+				#{rsrvStr6} ,
+			</if>
+			<if test="rsrvStr7 != null">
+				#{rsrvStr7} ,
+			</if>
+			<if test="rsrvStr8 != null">
+				#{rsrvStr8} ,
+			</if>
+			<if test="rsrvStr9 != null">
+				#{rsrvStr9} ,
+			</if>
+			<if test="rsrvStr0 != null">
+				#{rsrvStr0} ,
+			</if>
+			<if test="attachId != null">
+				#{attachId} ,
+			</if>
+		</trim>
+	</insert>
+
+	<select id="count" resultType="int">
+		select
+		count(*)
+		from
+		links
+		<where>
+			<include refid="listWhere" />
+		</where>
+	</select>
+
+	<select id="findList" resultMap="BaseResultMap">
+		select
+		<include refid="BaseColumnList" />
+		from
+		links
+		<where>
+			<include refid="listWhere" />
+		</where>
+		<if test="sortName != null ">
+			order by
+			<if test="'id' == sortName">
+				id
+			</if>
+			<if test="'linkName' == sortName">
+				link_name
+			</if>
+			<if test="'linkAddr' == sortName">
+				link_addr
+			</if>
+			<if test="'display' == sortName">
+				display
+			</if>
+			<if test="'linkType' == sortName">
+				link_type
+			</if>
+			<if test="'linkComment' == sortName">
+				link_comment
+			</if>
+			<if test="'createUser' == sortName">
+				create_user
+			</if>
+			<if test="'createTime' == sortName">
+				create_time
+			</if>
+			<if test="'operTime' == sortName">
+				oper_time
+			</if>
+			<if test="'operUser' == sortName">
+				oper_user
+			</if>
+			<if test="'rsrvStr1' == sortName">
+				RSRV_STR1
+			</if>
+			<if test="'rsrvStr2' == sortName">
+				RSRV_STR2
+			</if>
+			<if test="'rsrvStr4' == sortName">
+				RSRV_STR4
+			</if>
+			<if test="'rsrvStr3' == sortName">
+				RSRV_STR3
+			</if>
+			<if test="'rsrvStr5' == sortName">
+				RSRV_STR5
+			</if>
+			<if test="'rsrvStr6' == sortName">
+				RSRV_STR6
+			</if>
+			<if test="'rsrvStr7' == sortName">
+				RSRV_STR7
+			</if>
+			<if test="'rsrvStr8' == sortName">
+				RSRV_STR8
+			</if>
+			<if test="'rsrvStr9' == sortName">
+				RSRV_STR9
+			</if>
+			<if test="'rsrvStr0' == sortName">
+				RSRV_STR0
+			</if>
+			<if test="'attachId' == sortName">
+				ATTACH_ID
+			</if>
+			<if test="order != null ">
+				${ order}
+			</if>
+		</if>
+		<if test="beginIndex != null and pageSize != null">
+			limit #{beginIndex} , #{pageSize}
+		</if>
+	</select>
+
+	<update id="update">
+		update links
+		<set>
+			<if test="linkName != null">
+				link_name = #{linkName},
+			</if>
+			<if test="linkAddr != null">
+				link_addr = #{linkAddr},
+			</if>
+			<if test="display != null">
+				display = #{display},
+			</if>
+			<if test="linkType != null">
+				link_type = #{linkType},
+			</if>
+			<if test="linkComment != null">
+				link_comment = #{linkComment},
+			</if>
+			oper_time = now(),
+			<if test="operUser != null">
+				oper_user = #{operUser},
+			</if>
+			<if test="rsrvStr1 != null">
+				RSRV_STR1 = #{rsrvStr1},
+			</if>
+			<if test="rsrvStr2 != null">
+				RSRV_STR2 = #{rsrvStr2},
+			</if>
+			<if test="rsrvStr4 != null">
+				RSRV_STR4 = #{rsrvStr4},
+			</if>
+			<if test="rsrvStr3 != null">
+				RSRV_STR3 = #{rsrvStr3},
+			</if>
+			<if test="rsrvStr5 != null">
+				RSRV_STR5 = #{rsrvStr5},
+			</if>
+			<if test="rsrvStr6 != null">
+				RSRV_STR6 = #{rsrvStr6},
+			</if>
+			<if test="rsrvStr7 != null">
+				RSRV_STR7 = #{rsrvStr7},
+			</if>
+			<if test="rsrvStr8 != null">
+				RSRV_STR8 = #{rsrvStr8},
+			</if>
+			<if test="rsrvStr9 != null">
+				RSRV_STR9 = #{rsrvStr9},
+			</if>
+			<if test="rsrvStr0 != null">
+				RSRV_STR0 = #{rsrvStr0},
+			</if>
+			<if test="attachId != null">
+				ATTACH_ID = #{attachId},
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+
+
+	<delete id="deleteById" parameterType="long">
+		delete from links
+		where id
+		= #{id}
+	</delete>
+	<delete id="delete">
+		delete from links
+		where id in
+		<foreach item="item" collection="ids" open="(" separator=","
+			close=")">
+			#{item}
+		</foreach>
+	</delete>
+
+
+	<select id="getById" resultMap="BaseResultMap" parameterType="Long">
+		select
+		<include refid="BaseColumnList" />
+		from
+		links
+		where id = #{id}
+	</select>
+	<select id="fetch" resultMap="BaseResultMap">
+		select
+		<include refid="BaseColumnList" />
+		from
+		links
+		<where>
+			<include refid="listWhere" />
+		</where>
+	</select>
+</mapper>
+
