@@ -24,5 +24,6 @@
 	<dubbo:reference interface="com.zdy.dubbo.api.service.user.IUserService"		id="userService" ></dubbo:reference>
 	<dubbo:reference interface="com.zdy.dubbo.api.service.userrole.ISysUserRoleService"		id="userRoleService" ></dubbo:reference>
 	<dubbo:reference interface="com.zdy.dubbo.api.service.links.ILinksService"		id="linksService" ></dubbo:reference>
+	<dubbo:reference interface="com.zdy.dubbo.api.service.siteparameter.ISiteParameterService"		id="siteParameterService" ></dubbo:reference>
 
 </beans>

@@ -156,12 +156,12 @@ td {
 										</div>
 									</div>
 								</div>
-								<div class="col-md-12">
+								<!-- <div class="col-md-12">
 										<label class="col-md-1 control-label">参数值2</label>
 										<div class="col-md-11">
 											<textarea id="editData" name="editData"></textarea>
 										</div>
-								</div>
+								</div> -->
 							</div>
 						</div>
 						<div class="modal-footer">
@@ -176,7 +176,7 @@ td {
 	<!-- END wrapper -->
 	<!-- Examples -->
    <script type="text/javascript">
-   		$(document).ready(function () {
+   		/* $(document).ready(function () {
 		    if($("#editData").length > 0){
 		        tinymce.init({
 		            selector: "textarea#editData",
@@ -199,7 +199,7 @@ td {
 		            ]
 		        });    
 		    }  
-		});
+		}); */
   </script>
 	
 	<script src="pages/siteparameter/parameterList.js"></script>

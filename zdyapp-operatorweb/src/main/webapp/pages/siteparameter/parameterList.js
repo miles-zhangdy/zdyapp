@@ -197,8 +197,8 @@ function editDataValidate(){
 	$("#edit-frm").validate(
 			{
 				submitHandler : function(form) {
-					//editSiteParameter();
-					alert($("#editData_ifr").html())
+					editSiteParameter();
+					//alert($("#editData_ifr").html())
 				},
 				rules : {
 					paramName : {
