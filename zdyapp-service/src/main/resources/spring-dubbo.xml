@@ -16,7 +16,7 @@
 	<dubbo:application name="${dubbo.application}"></dubbo:application>
 	<!-- 使用zookeeper注册中心暴露服务地址 -->
 	<dubbo:registry address="${dubbo.registry}"></dubbo:registry>
-	<dubbo:protocol name="dubbo" port="${dubbo.protocol}" />
+	<dubbo:protocol name="dubbo" port="${dubbo.protocol}" serialization="java"/>
 	<dubbo:provider/>
 	<!-- 要暴露的服务接口 -->
 	<dubbo:service interface="com.zdy.dubbo.api.service.dictionary.IDictionaryService"	ref="dictionaryService" />
@@ -28,6 +28,5 @@
 	<dubbo:service interface="com.zdy.dubbo.api.service.userrole.ISysUserRoleService"		ref="userRoleService" />
 	<dubbo:service interface="com.zdy.dubbo.api.service.links.ILinksService"		ref="linksService" />
 	<dubbo:service interface="com.zdy.dubbo.api.service.siteparameter.ISiteParameterService"		ref="siteParameterService" />
-	
 
 </beans>
