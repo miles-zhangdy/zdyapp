@@ -60,7 +60,7 @@ td {
 								</div>
 							</div>
 							<div class="col-lg-6">
-						   		<h4 class="m-t-20 m-b-5"  id="userName"><b>zhangsan</b></h4>
+						   		<h4 class="m-t-20 m-b-5"  id="userName"><b></b></h4>
 						    </div>
 						</div>
 						<div class="col-lg-5">
@@ -74,7 +74,7 @@ td {
 								</div>
 							</div>
 							<div class="col-lg-6">
-						   		<h4 class="m-t-20 m-b-5"  id="userCompellation"><b>张三</b></h4>
+						   		<h4 class="m-t-20 m-b-5"  id="userCompellation"><b></b></h4>
 						    </div>
 						</div>
 						<div class="col-lg-5">
@@ -88,7 +88,7 @@ td {
 								</div>
 							</div>
 							<div class="col-lg-6">
-						   		<h4 class="m-t-20 m-b-5"  id="userAge"><b>23</b></h4>
+						   		<h4 class="m-t-20 m-b-5"  id="userAge"><b></b></h4>
 						    </div>
 						</div>
 						<div class="col-lg-5">
@@ -102,7 +102,7 @@ td {
 								</div>
 							</div>
 							<div class="col-lg-6">
-						   		<h4 class="m-t-20 m-b-5"  id="userSex"><b>男</b></h4>
+						   		<h4 class="m-t-20 m-b-5"  id="userSex"><b></b></h4>
 						    </div>
 						</div>
 						<div class="col-lg-5">
@@ -116,7 +116,7 @@ td {
 								</div>
 							</div>
 							<div class="col-lg-6">
-						   		<h4 class="m-t-20 m-b-5"  id=userPhone><b>18269775865</b></h4>
+						   		<h4 class="m-t-20 m-b-5"  id=userPhone><b></b></h4>
 						    </div>
 						</div>
 					</div>
